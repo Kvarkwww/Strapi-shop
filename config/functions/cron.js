@@ -1,7 +1,7 @@
 module.exports = {
     // Every hour
     '*/30 * * * *': async () => {
-      const { fetchWordPressData, saveDataToStrapi } = require('../../api/synchronization/services/wordpress');
+      const { fetchWordPressData, saveDataToStrapi } = require('../../api/wordpress/services/wordpress');
       try {
         const { products, categories } = await fetchWordPressData();
         await saveDataToStrapi(products, 'products');
